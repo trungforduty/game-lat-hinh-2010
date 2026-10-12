@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lật Hình 20/10</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="petals" aria-hidden="true"></div>
+
+  <main class="app">
+    <header class="hero">
+      <p class="eyebrow">Ngày Phụ nữ Việt Nam</p>
+      <h1>Lật Hình <span>20/10</span></h1>
+    </header>
+
+    <!-- Bước 1: chọn tên -->
+    <section id="screen-login" class="card-panel">
+      <label for="player-select">Chị là ai nhỉ?</label>
+      <select id="player-select">
+        <option value="">— Chọn tên của chị —</option>
+      </select>
+      <button id="btn-next" class="btn" disabled>Tiếp tục</button>
+    </section>
+
+    <!-- Bước 2: xác nhận lại -->
+    <section id="screen-confirm" class="card-panel hidden">
+      <p class="confirm-q">Xác nhận chị là</p>
+      <p id="confirm-name" class="confirm-name"></p>
+      <p class="hint">Mỗi chị có một bức ảnh riêng ẩn dưới các thẻ. Lật các cặp giống nhau để mở ảnh nhé!</p>
+      <div class="row">
+        <button id="btn-back" class="btn ghost">Không phải tôi</button>
+        <button id="btn-start" class="btn">Đúng, bắt đầu!</button>
+      </div>
+    </section>
+
+    <!-- Đã chơi -->
+    <section id="screen-played" class="card-panel hidden">
+      <p class="confirm-q">Chị <b id="played-name"></b> đã hoàn thành rồi 💐</p>
+      <p id="played-info" class="hint"></p>
+      <button id="btn-played-back" class="btn ghost">Quay lại</button>
+    </section>
+
+    <!-- Bước 3: chơi -->
+    <section id="screen-game" class="hidden">
+      <div class="stats">
+        <div><small>Người chơi</small><b id="stat-name"></b></div>
+        <div><small>Bắt đầu lúc</small><b id="stat-start"></b></div>
+        <div><small>Thời gian</small><b id="stat-time">00:00</b></div>
+        <div><small>Lượt lật</small><b id="stat-moves">0</b></div>
+      </div>
+      <div class="board-wrap">
+        <img id="board-image" class="board-image" alt="Ảnh bí mật" />
+        <div id="board" class="board"></div>
+      </div>
+    </section>
+
+    <!-- Hoàn thành -->
+    <div id="win" class="win hidden">
+      <div class="win-box">
+        <h2>Chúc mừng chị!</h2>
+        <p id="win-name" class="win-name"></p>
+        <img id="win-image" alt="Ảnh của chị" />
+        <p id="win-stats"></p>
+        <p class="wish">Chúc chị một ngày 20/10 thật rạng rỡ, luôn xinh đẹp và hạnh phúc! 🌹</p>
+        <button id="btn-close-win" class="btn">Ngắm ảnh</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
